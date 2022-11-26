@@ -156,7 +156,6 @@ return [
     | of "email". This simply helps us make our message more expressive.
     |
     */
-//    'name_is_required'=>'الاسم مطلوب',
 
     'attributes' => [],
 

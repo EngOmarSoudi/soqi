@@ -32,10 +32,12 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
-
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+            Route::namespace('admin')
+                ->group(base_path('routes/Admin.php')); //add a know route to order the links
         });
+        Route::pattern('name','[a-zA-Z]+');//validate the name
     }
 
     /**
