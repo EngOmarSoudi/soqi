@@ -40,6 +40,17 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin_first_session' => [
+            'driver' => 'session',
+            'provider' => 'admin_s',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash'=>false,
+        ],
     ],
 
     /*
@@ -63,6 +74,14 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'admin_s' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Admin::class,
         ],
 
         // 'users' => [

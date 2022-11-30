@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/test/{name?}', function ($name=null) {
+    return 'welcome '.$name ;
+});
+//validate the name as null or with value and contain only string
+//or go to [App/Providers/RouteServiceProvider] and in the function boot Route::pattern('name','[a-zA-Z]+');
+Route::match(['get','post'],'/checkReq',function (Request $request){
+   return 'It is '.$request->method();
+});
+Route::apiResource('api',(\App\Http\Controllers\Front\ApiController::class));
+//check the Request method GET or Post
